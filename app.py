@@ -33,7 +33,6 @@ app.add_middleware(
 )
 
 
-
 class DataForm:
     def __init__(self, request: Request):
         self.request: Request = request
@@ -63,12 +62,12 @@ class DataForm:
         self.full_time_position = form.get("full_time_position")
 
 
+
 @app.get("/", tags=["authentication"])
 async def index(request: Request):
 
     return templates.TemplateResponse(
             "usvisa.html",{"request": request, "context": "Rendering"})
-
 
 
 
@@ -83,8 +82,6 @@ async def trainRouteClient():
 
     except Exception as e:
         return Response(f"Error Occurred! {e}")
-    
-
 
 
 @app.post("/")
@@ -114,7 +111,7 @@ async def predictRouteClient(request: Request):
 
         status = None
         if value == 1:
-            status = "Visa Not-approved"
+            status = "Visa Not-Approved"
         else:
             status = "Visa-approved"
 
@@ -125,8 +122,6 @@ async def predictRouteClient(request: Request):
         
     except Exception as e:
         return {"status": False, "error": f"{e}"}
-    
-
 
 
 if __name__ == "__main__":

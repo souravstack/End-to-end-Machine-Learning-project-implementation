@@ -46,6 +46,8 @@ class USvisaData:
             raise USvisaException(e, sys) from e
         
     
+    
+    
     def get_usvisa_input_data_frame(self)-> DataFrame:
         """
         This function returns a DataFrame from USvisaData class input
@@ -89,7 +91,6 @@ class USvisaData:
             raise USvisaException(e, sys) from e
         
 
-    
 
 
 class USvisaClassifier:
